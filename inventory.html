@@ -154,7 +154,7 @@
 			position: fixed;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%) scale(0.9);
+			transform: translate(-50%, -50%);/*scale(0.9)*/
 			width: 50%;
 			height: auto;
 			background-color: #fff;
@@ -185,13 +185,37 @@
 			float: right;
 		}
 		.open .modal {
-			transform: translate(-50%, -50%) scale(1);
+			/*transform: translate(-50%, -50%) scale(1);*/
+			animation: elastic 0.3s ease;
+			-webkit-animation: elastic 0.3s ease;
 			visibility: visible;
 			opacity: 1;
 		}
 		.open .overlay {
 			visibility: visible;
 			opacity: 1;
+		}
+		@keyframes elastic {
+			0% {
+				transform: translate(-50%, -50%) scale(0.9);
+			}
+			50% {
+				transform: translate(-50%, -50%) scale(1.1);
+			}
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+		@-webkit-keyframes elastic {
+			0% {
+				transform: translate(-50%, -50%) scale(0.9);
+			}
+			50% {
+				transform: translate(-50%, -50%) scale(1.1);
+			}
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
 		}
 		label {
 			display: block;
@@ -511,7 +535,7 @@
 		      } else {
 		        tr[i].style.display = "none";
 		      }
-		    }       
+		    }
 		  }
 		}
 	</script>
